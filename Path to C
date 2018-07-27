@@ -1,0 +1,245 @@
+//problem statement:
+Hackerearth
+/*Today, Sherlock Holmes is playing with numbers. He has got 4 numbers A, B, C, and S from a crime scene. He is trying to find those 2 numbers which ORing gives C. If those numbers are M and N (M|N=C where | denotes bitwise OR), these must be found only to interchange at max S bits of A and B.  If there are multiple solutions, make M as small as possible; if there are still multiple solutions, make N as small as possible.
+
+ Holmes need your help to find M and N. So write a program to help Holmes.
+
+Note:
+A, B, and C are given in Hexadecimal (base 16), and is S given in decimal (base 10).
+If the number of bits changed in A is ka and the number of bits changed in B is kb, then (ka + kb ) must be <  S.
+Input:
+The first line of the input contains an integer T denoting the number of test cases. The description of each test case follows.
+
+The first line contains a single integer denoting the value of S.
+Next three lines contains a Hexadecimal (base 16) numbers describing the respective values of A, B and C.
+Output:
+Print two lines of output for each test case:
+
+The first line should contain a Hexadecimal (base 16) number denoting the value of M.
+The second line must contain a Hexadecimal (base 16), number denoting the value of N.
+If no valid answer exists, you must instead print one line of output with the integer -1.
+
+Constraints:
+1<T <6
+
+0 < S< 5x105
+
+0< A,B,C< 165x10000 
+
+Sample Test Case:
+Input:
+3
+
+8
+
+2B
+
+9F
+
+58
+
+5
+
+B9
+
+40
+
+5A
+
+2
+
+91
+
+BE
+
+A8
+
+Output:
+8
+
+58
+
+18
+
+42
+
+-1
+*/
+solution:
+
+#include<bits/stdc++.h>
+using namespace std;
+string htb(string h)
+{
+    string b="";
+    long long int i=0,l;
+    l=h.length();
+    while(l>0)
+     {
+         switch(h.at(i))
+          {
+              case '0':b.append("0000");break;
+              case '1':b.append("0001");break;
+              case '2':b.append("0010");break;
+              case '3':b.append("0011");break;
+              case '4':b.append("0100");break;
+              case '5':b.append("0101");break;
+              case '6':b.append("0110");break;
+              case '7':b.append("0111");break;
+              case '8':b.append("1000");break;
+              case '9':b.append("1001");break;
+              case 'A':b.append("1010");break;
+              case 'B':b.append("1011");break;
+              case 'C':b.append("1100");break;
+              case 'D':b.append("1101");break;
+              case 'E':b.append("1110");break;
+              case 'F':b.append("1111");break;
+              
+          }
+          i++;
+          l--;
+     }
+     return b;
+}
+ 
+string bth(string b)
+ {
+     string h="";
+     long long int i=0,l,f=0;
+     l=b.length();
+     while(l>0)
+      {
+          if((b.substr(i,4)=="0000"&&f!=0))
+           h.append("0");
+          if(b.substr(i,4)=="0001"){f=1;h.append("1");}
+          if(b.substr(i,4)=="0010"){f=1;h.append("2");}
+          if(b.substr(i,4)=="0011"){f=1;h.append("3");}
+          if(b.substr(i,4)=="0100"){f=1;h.append("4");}
+          if(b.substr(i,4)=="0101"){f=1;h.append("5");}
+          if(b.substr(i,4)=="0110"){f=1;h.append("6");}
+          if(b.substr(i,4)=="0111"){f=1;h.append("7");}
+          if(b.substr(i,4)=="1000"){f=1;h.append("8");}
+          if(b.substr(i,4)=="1001"){f=1;h.append("9");}
+          if(b.substr(i,4)=="1010"){f=1;h.append("A");}
+          if(b.substr(i,4)=="1011"){f=1;h.append("B");}
+          if(b.substr(i,4)=="1100"){f=1;h.append("C");}
+          if(b.substr(i,4)=="1101"){f=1;h.append("D");}
+          if(b.substr(i,4)=="1110"){f=1;h.append("E");}
+          if(b.substr(i,4)=="1111"){f=1;h.append("F");}
+          i=i+4;
+          l=l-4;
+      }
+      if(f==0)
+        h='0';
+        return h;
+ }
+ void call()
+ {
+     long long int  s,a1,b1,c1,ct=0,i;
+     int f=0;
+     cin>>s;
+     string a,b,c;
+     cin>>a;
+     cin>>b;
+     cin>>c;
+     a=htb(a);
+     b=htb(b);
+     c=htb(c);
+     a1=a.length();
+     b1=b.length();
+     c1=c.length();
+     if(a1>b1&&a1>c1)
+     {
+         string s1((a1-b1),'0'),s2((a1-c1),'0');
+         b.insert(0,s1);
+         c.insert(0,s2);
+     }
+     if(b1>a1&&b1>c1)
+      {
+          string s1((b1-a1),'0'),s2((b1-c1),'0');
+          a.insert(0,s1);
+          c.insert(0,s2);
+      }
+      if(c1>a1&&c1>b1)
+       {
+           string s1((c1-a1),'0'),s2((c1-b1),'0');
+           a.insert(0,s1);
+           b.insert(0,s2);
+       }
+     for(i=0;i<(int)c.size();i++)
+     {
+         if(c.at(i)=='0')
+          {
+              if(a.at(i)!='0')
+                {
+                    if(ct<s){
+                         a.at(i)='0';ct++;}
+                     else { cout<<"-1\n";
+                     f=1;break;
+                     }
+                }
+                if(b.at(i)!='0')
+                {if(ct<s) {
+                          b.at(i)='0';
+                          ct++;}
+                      else
+                      {
+                          cout<<-1<<"\n";
+                          f=1;
+                          break;
+                      }
+                }
+            }
+                else
+                {
+                    if((a.at(i)=='0')&&(b.at(i)=='0'))
+                    {
+                        if(ct<s){
+                            b.at(i)='1';
+                            ct++;}
+                        else
+                        {
+                            cout<<-1<<"\n";
+                            f=1;
+                            break;
+                        }
+                    }
+                }
+          }
+          for(i=0;i<(int)c.length();i++)
+          {
+              if((a.at(i)=='1')&&(b.at(i)=='1'))
+              {
+                  if(ct<s){
+                      a.at(i)='0';ct++;}
+                  else
+                      break;
+              }
+              if((a.at(i)=='1')&&(b.at(i)=='0'))
+              {
+                  if((ct+1)<s){
+                      a.at(i)='0';
+                      b.at(i)='1';
+                      ct+=2;}
+                  if(ct==s)
+                   break;
+              }
+          }
+        if(f==0)
+         {
+             a=bth(a);
+             b=bth(b);
+             cout<<a<<"\n"<<b<<"\n";
+         }
+     }
+       
+   int main()
+   {
+       int t;
+       cin>>t;
+       while(t--)
+         call();
+        return 0;
+   }
+   
+Language: C++14
