@@ -392,3 +392,287 @@ public class MainActivity extends AppCompatActivity {
 
 XML SNIPPET
 ==================================================================================
+
+
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainxml"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/backblacjk"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hvv">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lll"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/l1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b1"
+            android:layout_margin="10dp"
+            android:text="Hotel"
+            android:visibility="gone"
+            android:onClick="Hotel"
+            android:textAllCaps="false"
+            android:textStyle="italic"
+            android:alpha="0.90"
+            android:background="#dae4ed"
+            android:textFontWeight="30dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b2"
+            android:layout_margin="10dp"
+            android:text="Bus"
+            android:visibility="gone"
+            android:onClick="bus"
+            android:alpha="0.90"
+            android:background="#dae4ed"
+            android:textAllCaps="false"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b3"
+            android:text="Bar"
+            android:visibility="gone"
+            android:alpha="0.90"
+            android:layout_margin="10dp"
+            android:background="#dae4ed"
+            android:textAllCaps="false"
+            android:onClick="bar"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b4"
+            android:layout_margin="10dp"
+            android:alpha="0.90"
+            android:visibility="gone"
+            android:background="#dae4ed"
+            android:text="Pub"
+            android:onClick="pub"
+            android:textAllCaps="false"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/l2"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b5"
+            android:layout_margin="10dp"
+            android:text="Hospital"
+            android:textAllCaps="false"
+            android:alpha="0.90"
+            android:visibility="gone"
+            android:onClick="hospital"
+            android:background="#dae4ed"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b6"
+            android:visibility="gone"
+            android:layout_margin="10dp"
+            android:text="Travels"
+            android:onClick="travels"
+            android:textAllCaps="false"
+            android:alpha="0.90"
+            android:background="#dae4ed"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b7"
+            android:layout_margin="10dp"
+            android:text="Clinic"
+            android:visibility="gone"
+            android:textAllCaps="false"
+            android:textStyle="italic"
+            android:onClick="clinic"
+            android:alpha="0.90"
+            android:background="#dae4ed"
+            android:textFontWeight="30dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b8"
+            android:layout_margin="10dp"
+            android:text="Mall"
+            android:onClick="mall"
+            android:textAllCaps="false"
+            android:alpha="0.90"
+            android:visibility="gone"
+            android:background="#dae4ed"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/l3"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b9"
+            android:visibility="gone"
+            android:text="Medical store"
+            android:layout_margin="10dp"
+            android:onClick="medicalstore"
+            android:alpha="0.90"
+            android:background="#dae4ed"
+            android:textAllCaps="false"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b10"
+            android:text="Gym"
+            android:visibility="gone"
+            android:textAllCaps="false"
+            android:onClick="gym"
+            android:textStyle="italic"
+            android:alpha="0.90"
+            android:layout_margin="10dp"
+            android:background="#dae4ed"
+            android:textFontWeight="30dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b11"
+            android:visibility="gone"
+            android:layout_margin="10dp"
+            android:text="Atm"
+            android:onClick="atm"
+            android:alpha="0.90"
+            android:background="#dae4ed"
+            android:textAllCaps="false"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b12"
+            android:visibility="gone"
+            android:layout_margin="10dp"
+            android:text="Bank"
+            android:onClick="bank"
+            android:textAllCaps="false"
+            android:alpha="0.90"
+            android:background="#dae4ed"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/l4"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b13"
+            android:layout_margin="10dp"
+            android:text="Petrol Pump"
+            android:onClick="petrolpump"
+            android:alpha="0.90"
+            android:visibility="gone"
+            android:background="#dae4ed"
+            android:textAllCaps="false"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b14"
+            android:visibility="gone"
+            android:layout_margin="10dp"
+            android:text="Resturant"
+            android:onClick="resturant"
+            android:alpha="0.90"
+            android:background="#dae4ed"
+            android:textAllCaps="false"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b15"
+            android:visibility="gone"
+            android:layout_margin="10dp"
+            android:text="Bus Stand"
+            android:onClick="busStand"
+            android:alpha="0.90"
+            android:background="#dae4ed"
+            android:textAllCaps="false"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b16"
+            android:visibility="gone"
+            android:layout_margin="10dp"
+            android:text="Railway"
+            android:onClick="railwayStation"
+            android:alpha="0.90"
+            android:background="#dae4ed"
+            android:textAllCaps="false"
+            android:textStyle="italic"
+            android:textFontWeight="30dp"/>
+    </LinearLayout>
+
+    </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>
+
