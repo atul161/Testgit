@@ -1,0 +1,394 @@
+Java snippet
+Multi threading concept in Android 
+simple code to see how different buttons ------moved without touching
+====
+Changing background color of buttons using Multi threading
+============================================================================
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.concurrent.locks.LockSupport;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16;
+   /* public void call()
+    {
+        Toast.makeText(this,"hello",Toast.LENGTH_SHORT).show();
+        Thread t1=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(i1=1;i1<100;i1++) {
+
+                   b1.setBackgroundColor(Color.BLUE);
+
+                }
+
+            }
+        });
+
+        Thread t2=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(i2=1;i2<250;i2++)
+                    b2.getBackground().setAlpha(i2);
+
+            }
+        });
+
+
+        Thread t3=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(i3=1;i3<250;i3++)
+                    b3.getBackground().setAlpha(i3);
+
+            }
+        });
+
+
+        Thread t4=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(i4=1;i4<250;i4++) {
+                    b4.getBackground().setAlpha(i4);
+                }
+
+            }
+        });
+        t2.start();
+        Toast.makeText(this,"hello"+i1,Toast.LENGTH_SHORT).show();
+        t2.start();
+        t3.start();
+        t4.start();
+    }*/
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        b1=findViewById(R.id.b1);
+        b2=findViewById(R.id.b2);
+        b3=findViewById(R.id.b3);
+        b4=findViewById(R.id.b4);
+        b5=findViewById(R.id.b5);
+        b6=findViewById(R.id.b6);
+        b7=findViewById(R.id.b7);
+        b8=findViewById(R.id.b8);
+        b9=findViewById(R.id.b9);
+        b10=findViewById(R.id.b10);
+        b11=findViewById(R.id.b11);
+        b12=findViewById(R.id.b12);
+        b13=findViewById(R.id.b13);
+        b14=findViewById(R.id.b14);
+        b15=findViewById(R.id.b15);
+        b16=findViewById(R.id.b16);
+
+            b1.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+
+                    b1.setBackgroundColor(Color.rgb(255,102,0));
+                    b1.setVisibility(View.VISIBLE);
+                }
+            }, 1000l);
+
+
+
+        b2.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b2.setBackgroundColor(Color.rgb(255,102,0));
+                b2.setVisibility(View.VISIBLE);
+            }
+        }, 2000l);
+
+
+        b3.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b3.setBackgroundColor(Color.rgb(255,102,0));
+                b3.setVisibility(View.VISIBLE);
+            }
+        }, 8000l);
+
+
+
+
+        b4.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b4.setBackgroundColor(Color.rgb(255,102,0));
+                b4.setVisibility(View.VISIBLE);
+            }
+        }, 7000l);
+
+
+
+
+
+        b5.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b5.setBackgroundColor(Color.rgb(255,102,0));
+                b5.setVisibility(View.VISIBLE);
+            }
+        }, 3100l);
+
+
+
+
+        b6.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b6.setBackgroundColor(Color.rgb(255,102,0));
+                b6.setVisibility(View.VISIBLE);
+            }
+        }, 4000l);
+
+        b7.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b7.setBackgroundColor(Color.rgb(255,102,0));
+                b7.setVisibility(View.VISIBLE);
+            }
+        }, 5000l);
+
+        b8.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b8.setBackgroundColor(Color.rgb(255,102,0));
+                b8.setVisibility(View.VISIBLE);
+            }
+        }, 7000l);
+
+        b9.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b9.setBackgroundColor(Color.rgb(255,102,0));
+                b9.setVisibility(View.VISIBLE);
+            }
+        }, 2900l);
+
+        b10.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+
+                b10.setBackgroundColor(Color.rgb(255,102,0));
+                b10.setVisibility(View.VISIBLE);
+            }
+        }, 500l);
+
+        b11.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b11.setBackgroundColor(Color.rgb(255,102,0));
+                b11.setVisibility(View.VISIBLE);
+            }
+        }, 3100l);
+
+        b12.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b12.setBackgroundColor(Color.rgb(255,102,0));
+                b12.setVisibility(View.VISIBLE);
+            }
+        }, 1200l);
+
+        b13.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b13.setBackgroundColor(Color.rgb(255,102,0));
+                b13.setVisibility(View.VISIBLE);
+            }
+        }, 7100l);
+
+        b14.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b14.setBackgroundColor(Color.rgb(255,102,0));
+                b14.setVisibility(View.VISIBLE);
+            }
+        }, 2000l);
+
+        b15.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b15.setBackgroundColor(Color.rgb(255,102,0));
+                b15.setVisibility(View.VISIBLE);
+            }
+        }, 4000l);
+
+
+
+        b16.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+
+                b16.setBackgroundColor(Color.rgb(255,102,0));
+                b16.setVisibility(View.VISIBLE);
+            }
+        }, 1000l);
+
+    }
+
+
+    public void Hotel(View view)
+    {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Hotel");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void bus(View view)
+    {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Hotel");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void bar(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Bar");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void pub(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Pub");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void hospital(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Hospital");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void travels(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Tour and Travels");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void clinic(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Clinic");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void mall(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Mall");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void medicalstore(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Medical Store");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void gym(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Gym");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void atm(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Atm");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void bank(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Bank");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void petrolpump(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Petrol Pump");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void resturant(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Resturant");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void busStand(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Bus Stand");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void railwayStation(View view) {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Railway Station");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+}
+
+
+
+
+
+
+XML SNIPPET
+==================================================================================
